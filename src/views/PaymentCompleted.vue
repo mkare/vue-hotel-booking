@@ -6,7 +6,7 @@
           <h4 class="mt-2">Teşekkürler! Rezervasyonunuz oluşturuldu.</h4>
           <hr class="clearfix">
           <span>Giriş Tarihi: </span>
-          <strong>{{moment(checkInDate).format('DD/MM/YYYY')}}</strong> -
+          <strong>{{moment(checkInDate).format('DD/MM/YYYY')}}</strong> - <br>
           <span>Çıkış Tarihi: </span>
           <strong>{{moment(checkOutDate).format('DD/MM/YYYY')}}</strong>
           <hr class="clearfix">
@@ -23,6 +23,7 @@
 
 <script>
 import { mapState } from 'vuex';
+import router from '@/router';
 
 export default {
   name: 'PaymentCompleted',
@@ -37,6 +38,11 @@ export default {
       'roomType',
       'roomView'
     ]),
+  },
+  beforeCreate(){
+    if (!this.checkInDate && !this.checkOutDate) {
+      router.push({ path: '/' })
+    }
   }
 };
 </script>

@@ -23,7 +23,6 @@ const routes = [
     name: 'PaymentCompleted',
     component: () => import(/* webpackChunkName: "about" */ '../views/PaymentCompleted.vue'),
     beforeEnter: (to, from, next) => {
-      console.log(to, from);
       next();
     }
   }
