@@ -1,0 +1,23 @@
+html {
+  font-size: 14px;
+
+  body {
+    padding-bottom: 150px;
+  }
+}
+
+.section-heading {
+  color: #718093;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  position: relative;
+
+  &:before {
+    border-bottom: 1px solid #7f8fa6;
+    content: "";
+    position: absolute;
+    bottom: -.25rem;
+    width: 100%;
+  }
+}
